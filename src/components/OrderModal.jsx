@@ -1,9 +1,9 @@
 import { useEffect, useRef, useState } from 'react'
-import { ArrowLeft, Check, Clock3, LoaderCircle, X } from 'lucide-react'
+import { ArrowLeft, Check, Clock3, LoaderCircle, Minus, Plus, X } from 'lucide-react'
 
 const indianMobilePattern = '[6-9][0-9]{9}'
 
-export default function OrderModal({ special, quantity, onClose }) {
+export default function OrderModal({ special, quantity, onQuantityChange, onClose }) {
   const [customer, setCustomer] = useState({ name: '', room: '', block: '', phone: '' })
   const [order, setOrder] = useState(null)
   const [isSubmitting, setIsSubmitting] = useState(false)
@@ -119,6 +119,17 @@ export default function OrderModal({ special, quantity, onClose }) {
                     <option value="Block B">Block B</option>
                   </select>
                 </label>
+                <div className="field-label field-full order-quantity-field">
+                  <span className="order-quantity-label">Quantity</span>
+                  <div className="order-quantity-row">
+                    <div className="quantity-control" role="group" aria-label="Select quantity in plates">
+                      <button type="button" aria-label="Decrease quantity" disabled={quantity <= 1 || isSubmitting} onClick={() => onQuantityChange(Math.max(1, quantity - 1))}><Minus size={15} /></button>
+                      <output aria-live="polite" aria-atomic="true">{quantity}</output>
+                      <button type="button" aria-label="Increase quantity" disabled={isSubmitting} onClick={() => onQuantityChange(quantity + 1)}><Plus size={15} /></button>
+                    </div>
+                    <span className="quantity-price-note">₹{special.price} per plate</span>
+                  </div>
+                </div>
                 <label className="field-label field-full">Mobile number
                   <div className="phone-input"><span>+91</span><input autoComplete="tel-national" inputMode="numeric" name="phone" type="tel" required pattern={indianMobilePattern} minLength={10} maxLength={10} title="Enter a valid 10-digit Indian mobile number starting with 6, 7, 8 or 9" value={customer.phone} onChange={(event) => setCustomer((current) => ({ ...current, phone: event.target.value.replace(/\D/g, '').slice(0, 10) }))} placeholder="10-digit number" /></div>
                 </label>

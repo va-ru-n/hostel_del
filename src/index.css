@@ -190,6 +190,14 @@ a { color: inherit; text-decoration: none; }
 .order-form .field-label input:hover, .order-form .field-label select:hover { border-color: #bca995; }
 .order-form .field-label input:focus, .order-form .field-label select:focus { border-color: var(--tomato); box-shadow: 0 0 0 3px #b9413218; }
 .order-form .field-label input:user-invalid, .order-form .field-label select:user-invalid { border-color: #c65a49; }
+.order-quantity-field { grid-column: 1 / -1; }
+.order-form .order-quantity-label { color: #665448; font-size: 9px; font-weight: 600; letter-spacing: .35px; }
+.order-quantity-row { display: flex; align-items: center; gap: 12px; }
+.order-quantity-row .quantity-control { height: 44px; background: #fffdf9; }
+.order-quantity-row .quantity-control button { width: 40px; }
+.order-quantity-row .quantity-control button:focus-visible { outline: 2px solid var(--sage); outline-offset: -3px; }
+.order-quantity-row .quantity-control output { color: var(--bark); font-weight: 700; }
+.quantity-price-note { color: #84796e; font-size: 9px; font-weight: 400; }
 .phone-input { position: relative; }
 .phone-input > span { position: absolute; top: 50%; left: 6px; min-width: 37px; padding: 8px 5px; color: var(--tomato); background: #f5ebdf; font-size: 10px; font-weight: 600; text-align: center; transform: translateY(-50%); }
 .phone-input input { padding-left: 52px !important; }

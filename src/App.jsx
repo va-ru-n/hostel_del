@@ -89,7 +89,7 @@ export default function App() {
       <button className="mobile-order-float" type="button" onClick={openOrder} aria-label={`Order today's ${todaysSpecial.name}`}>
         <span>Today’s plate · ₹{todaysSpecial.price}</span><span>Order now ↗</span>
       </button>
-      {orderOpen && <OrderModal key="order-form" special={todaysSpecial} quantity={quantity} onClose={closeOrder} />}
+      {orderOpen && <OrderModal key="order-form" special={todaysSpecial} quantity={quantity} onQuantityChange={setQuantity} onClose={closeOrder} />}
       {toast && <div className="toast-message" role="status" aria-live="polite">{toast}</div>}
     </>
   )

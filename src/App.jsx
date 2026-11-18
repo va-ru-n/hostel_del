@@ -75,7 +75,7 @@ export default function App() {
     <>
       <Navbar onOrder={openOrder} />
       <main>
-        <Hero special={todaysSpecial} onOrder={openOrder} timeLeft={timeLeft.text} isAvailable={timeLeft.available} />
+        <Hero special={todaysSpecial} onOrder={openOrder} />
         <div className="marquee-strip" aria-label="One special, made fresh every day">
           <div className="marquee-content" aria-hidden="true">
             {[0, 1, 2, 3].map((item) => <span key={item}>ONE SPECIAL <b>✳</b> MADE FRESH <b>✳</b> DELIVERED WITH CARE <b>✳</b></span>)}

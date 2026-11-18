@@ -72,8 +72,8 @@ export default function OrderModal({ special, quantity, onQuantityChange, onClos
                 <div><span>ROOM / BLOCK</span><strong>{order.room} · {order.block}</strong></div>
                 <span className="ticket-stamp"><b>✳</b>FRESH<br />TODAY</span>
               </div>
-              <div className="ticket-perforation"><span>✳ &nbsp; READY FOR THE RIDE &nbsp; ✳</span></div>
-              <div className="ticket-main">
+              <div className="ticket-perforation ticket-paper"><span>✳ &nbsp; READY FOR THE RIDE &nbsp; ✳</span></div>
+              <div className="ticket-main ticket-paper">
                 <div className="ticket-dish">
                   <span>TONIGHT’S SPECIAL</span>
                   <strong>{order.item}</strong>
@@ -81,12 +81,12 @@ export default function OrderModal({ special, quantity, onQuantityChange, onClos
                 </div>
                 <div className="ticket-quantity"><span>QTY</span><strong>{String(order.quantity).padStart(2, '0')}</strong></div>
               </div>
-              <div className="ticket-route">
+              <div className="ticket-route ticket-paper">
                 <span><i className="route-dot route-kitchen" /> OUR KITCHEN</span>
                 <i className="route-line" aria-hidden="true" />
                 <span><i className="route-dot route-door" /> YOUR DOOR</span>
               </div>
-              <div className="ticket-details">
+              <div className="ticket-details ticket-paper">
                 <div><span>DELIVERY WINDOW</span><strong>{order.deliveryWindow}</strong></div>
                 <div><span>ORDER REFERENCE</span><strong>{order.id}</strong></div>
               </div>

@@ -1,11 +1,13 @@
-import { ArrowDown, ArrowUpRight, Clock3, Leaf } from 'lucide-react'
+import { ArrowDown, ArrowUpRight, Building2, Clock3, Leaf } from 'lucide-react'
+import FlipCountdown from './FlipCountdown.jsx'
 
-export default function Hero({ special, onOrder, timeLeft, isAvailable }) {
+export default function Hero({ special, onOrder }) {
   return (
     <section className="hero-section" id="home">
       <div className="hero-copy" data-reveal="left">
         <p className="eyebrow"><span className="eyebrow-line" /> A little something, cooked today</p>
         <h1>Good food.<br /><em>Good evening.</em></h1>
+        <FlipCountdown />
         <p className="hero-intro">
           There’s just one thing on the menu today, and it’s made to make your evening.
         </p>
@@ -23,6 +25,7 @@ export default function Hero({ special, onOrder, timeLeft, isAvailable }) {
         <div className="hero-meta">
           <span><Clock3 size={15} /> At your door, {special.deliveryWindow}</span>
           <span><Leaf size={15} /> Cooked fresh, every day</span>
+          <span><Building2 size={15} /> Only for BH 10 students</span>
         </div>
       </div>
       <div className="hero-visual" data-reveal="right">
@@ -33,11 +36,6 @@ export default function Hero({ special, onOrder, timeLeft, isAvailable }) {
         <div className="hero-sticker" aria-label="Only one special each day">
           <span>ONE<br />GOOD<br />THING</span>
           <span className="sticker-star" aria-hidden="true">✳</span>
-        </div>
-        <div className={`availability-note${isAvailable ? '' : ' is-closed'}`}>
-          <span className="availability-dot" />
-          <span>{isAvailable ? 'Taking orders for today' : 'Today’s order window has closed'}</span>
-          {isAvailable && <span className="cutoff-clock">· {timeLeft} left</span>}
         </div>
       </div>
     </section>

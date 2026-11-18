@@ -30,7 +30,7 @@ button { cursor: pointer; }
 a { color: inherit; text-decoration: none; }
 ::selection { color: #fffdf9; background: var(--tomato); }
 
-.site-header { height: 82px; padding: 0 max(6.7vw, calc((100vw - 1280px) / 2)); display: flex; align-items: center; justify-content: space-between; border-bottom: 1px dashed #daced0; background: var(--cream); position: sticky; top: 0; z-index: 20; transition: transform .32s cubic-bezier(.22, .72, .24, 1); will-change: transform; }
+.site-header { height: 82px; padding: 0 max(6.7vw, calc((100vw - 1280px) / 2)); display: flex; align-items: center; justify-content: space-between; border-bottom: 1px dashed var(--tomato); background: var(--cream); position: sticky; top: 0; z-index: 20; transition: transform .32s cubic-bezier(.22, .72, .24, 1); will-change: transform; }
 .site-header.nav-hidden { transform: translateY(calc(-100% - 1px)); }
 .brand { display: inline-flex; gap: 10px; align-items: center; }
 .brand-logo { display: block; width: 126px; height: 80px; object-fit: contain; transition: transform .25s ease; }
